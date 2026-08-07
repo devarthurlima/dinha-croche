@@ -1,0 +1,351 @@
+@charset "UTF-8";
+
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Playwrite+DE+SAS:wght@100..400&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(to bottom, #f9216e, #fe915d);
+  /* background-color: #fee1e6; */
+  background-attachment: fixed;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* header {
+   background-image: linear-gradient(to bottom, #f9216e, #fe915d); 
+} */
+
+header h1 {
+  font-family: "Kaushan Script";
+  text-align: center;
+  color: #fee1e6;
+  font-size: 5em;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  gap: 15px;
+}
+
+nav a {
+  color: #fee1e6;
+  text-decoration: none;
+  font-family: cursive;
+  font-size: 18px;
+}
+
+nav a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.galeria-croche {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-top: 20px;
+}
+
+.galeria-croche img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.frase-fotos {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fee1e6;
+  font-weight: bold;
+  font-size: 2.8em;
+  margin: 20px;
+}
+
+.encomendar {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 2.2em;
+  font-family: " Playwrite DE SAS", serif;
+  transition: transform 0.3s ease;
+  border-radius: 20px;
+  color: #f9216e;
+  margin: 30px;
+}
+
+.encomendar a {
+  color: #f9216e;
+  text-decoration: none;
+  background-color: #fee1e6;
+  border-radius: 20px;
+  padding: 12px 40px;
+  border-radius: 50px;
+}
+
+.encomendar:active {
+  transform: scale(0.95);
+}
+
+.encomendar:hover {
+  cursor: pointer;
+  color: #fee1e6;
+  transform: scale(1.1);
+}
+
+.conteiner-inferior {
+  display: flex;
+  padding: 20px;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Arrumar a aba de categorias */
+.categorias {
+  background-color: #fee1e6;
+  padding: 25px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 320px;
+}
+
+.categorias h3,
+.depoimentos h3,
+.faq h3 {
+  font-family: "Kaushan Script";
+  color: #f9216e;
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Arrumar o grid */
+.grid-categorias {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  width: 100%;
+}
+
+.item-categoria figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.item-categoria img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.item-categoria img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.nome_categoria {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #f9216e;
+  font-size: 0.95em;
+}
+
+/* Depoimentos */
+.depoimentos {
+  background-color: #fee1e6;
+  padding: 25px;
+  border-radius: 20px;
+  width: 320px;
+}
+
+.lista-depoimentos {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.item-depoimento {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #fff;
+  padding: 12px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.foto-cliente {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.conteudo-depoimento blockquote {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.85em;
+  color: #333;
+  font-style: italic;
+}
+
+.conteudo-depoimento cite {
+  display: block;
+  margin-top: 6px;
+  font-family: cursive;
+  font-size: 0.8em;
+  color: #f9216e;
+  font-style: normal;
+}
+
+/* Perguntas Frequentes */
+.faq {
+  max-width: 700px;
+  margin: 40px auto 0;
+  background-color: #fee1e6;
+  padding: 25px 30px;
+  border-radius: 20px;
+}
+
+.lista-faq {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-faq {
+  border-bottom: 1px solid rgba(249, 33, 110, 0.2);
+}
+
+.item-faq:last-child {
+  border-bottom: none;
+}
+
+.pergunta {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #f9216e;
+  font-size: 1em;
+  padding: 16px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.icone-faq {
+  font-size: 1.3em;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  margin-left: 10px;
+}
+
+.item-faq.aberto .icone-faq {
+  transform: rotate(45deg);
+}
+
+.resposta {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9em;
+  color: #555;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0;
+}
+
+.item-faq.aberto .resposta {
+  max-height: 200px;
+  padding-bottom: 16px;
+}
+
+/* Chamada final */
+.cta-final {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.cta-final h2 {
+  font-family: "Kaushan Script";
+  color: #fee1e6;
+  font-size: 2.2em;
+  margin-bottom: 10px;
+}
+
+/* Rodapé */
+footer {
+  background-color: #4a1a24;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.redes-sociais {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.img_rodape {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.img_rodape:hover {
+  transform: scale(1.15);
+}
+
+footer p {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fee1e6;
+  font-size: 0.8em;
+}
+
+/* Responsivo */
+@media (max-width: 700px) {
+  .conteiner-inferior {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .categorias,
+  .depoimentos {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  header h1 {
+    font-size: 3em;
+  }
+
+  .frase-fotos {
+    font-size: 1.8em;
+  }
+}
