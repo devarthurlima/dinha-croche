@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Kaushan+Script&family=Playwrite+DE+SAS:wght@100..400&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
 @import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Playwrite+DE+SAS:wght@100..400&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
@@ -38,8 +40,9 @@ nav ul {
 nav a {
   color: #fee1e6;
   text-decoration: none;
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
-  font-size: 18px;
+  font-family: "Comic Neue", "Comic Sans MS", "Comic Sans", cursive;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 nav a:hover {
