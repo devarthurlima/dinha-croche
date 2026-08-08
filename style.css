@@ -9,7 +9,7 @@
 }
 
 body {
-    background-image: linear-gradient(to bottom, #f9216e, #fe915d);
+  background-image: linear-gradient(to bottom, #f9216e, #fe915d);
   /* background-color: #fee1e6; */
   background-attachment: fixed;
   overflow-x: hidden;
@@ -38,7 +38,7 @@ nav ul {
 nav a {
   color: #fee1e6;
   text-decoration: none;
-  font-family: cursive;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
   font-size: 18px;
 }
 
@@ -76,21 +76,22 @@ nav a:hover {
 .encomendar {
   text-align: center;
   font-weight: bolder;
-  font-size: 2.2em;
-  font-family: " Playwrite DE SAS", serif;
+  font-size: 2em;
+  font-family: serif;
   transition: transform 0.3s ease;
   border-radius: 20px;
   color: #f9216e;
-  margin: 30px;
+  margin: 30px 10px;
 }
 
 .encomendar a {
   color: #f9216e;
   text-decoration: none;
   background-color: #fee1e6;
-  border-radius: 20px;
-  padding: 12px 40px;
+  padding: 12px 25px;
   border-radius: 50px;
+  display: inline-block;
+  max-width: 100%;
 }
 
 .encomendar:active {
@@ -275,7 +276,9 @@ nav a:hover {
   color: #555;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
+  transition:
+    max-height 0.3s ease,
+    padding 0.3s ease;
   padding: 0;
 }
 
@@ -347,5 +350,16 @@ footer p {
 
   .frase-fotos {
     font-size: 1.8em;
+  }
+
+  .encomendar {
+    font-size: 1.4em;
+    margin: 20px 10px;
+  }
+
+  .encomendar a {
+    padding: 10px 20px;
+    width: auto;
+    max-width: 90%;
   }
 }
