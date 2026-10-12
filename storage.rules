@@ -1,0 +1,32 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isAuthenticated() && (
+        request.auth.token.email_verified == true ||
+        request.auth.token.admin == true
+      );
+    }
+
+    // Regras para imagens de produtos
+    match /produtos/{produtoId}/{fileName} {
+      // Qualquer visitante pode carregar e visualizar fotos dos produtos
+      allow read: if true;
+
+      // Apenas administradores autenticados podem enviar imagens
+      // Limite de 5MB e formatos de imagem aceitos
+      allow write: if isAdmin()
+        && request.resource.size < 5 * 1024 * 1024
+        && request.resource.contentType.matches('image/(jpeg|jpg|png|webp)');
+
+      // Apenas administradores podem apagar imagens
+      allow delete: if isAdmin();
+    }
+  }
+}

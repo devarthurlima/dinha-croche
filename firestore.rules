@@ -1,0 +1,83 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Função utilitária para verificar se a requisição vem de um usuário autenticado
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Função para verificar se o usuário autenticado possui e-mail verificado (ou custom claim / UID autorizado)
+    function isAdmin() {
+      return isAuthenticated() && (
+        request.auth.token.email_verified == true ||
+        request.auth.token.admin == true
+      );
+    }
+
+    // Validação de campos de um produto na criação
+    function isValidProductCreate() {
+      let data = request.resource.data;
+      return data.keys().hasAll(['nome', 'preco', 'categoria', 'ativo', 'estoque'])
+        && data.nome is string && data.nome.size() >= 3 && data.nome.size() <= 120
+        && data.preco is number && data.preco >= 0
+        && (!('precoPromocional' in data) || (data.precoPromocional is number && data.precoPromocional >= 0))
+        && data.categoria is string && data.categoria.size() >= 2 && data.categoria.size() <= 50
+        && data.ativo is bool
+        && data.estoque is number && data.estoque >= 0
+        && (!('tamanhos' in data) || (data.tamanhos is list && data.tamanhos.size() <= 15))
+        && (!('cores' in data) || (data.cores is list && data.cores.size() <= 15))
+        && (!('imagens' in data) || (data.imagens is list && data.imagens.size() <= 10))
+        && (!('descricao' in data) || (data.descricao is string && data.descricao.size() <= 2000));
+    }
+
+    // Validação de campos de um produto na atualização
+    function isValidProductUpdate() {
+      let data = request.resource.data;
+      return (!('nome' in data) || (data.nome is string && data.nome.size() >= 3 && data.nome.size() <= 120))
+        && (!('preco' in data) || (data.preco is number && data.preco >= 0))
+        && (!('precoPromocional' in data) || (data.precoPromocional is number && data.precoPromocional >= 0))
+        && (!('categoria' in data) || (data.categoria is string && data.categoria.size() >= 2 && data.categoria.size() <= 50))
+        && (!('ativo' in data) || data.ativo is bool)
+        && (!('estoque' in data) || (data.estoque is number && data.estoque >= 0))
+        && (!('tamanhos' in data) || (data.tamanhos is list && data.tamanhos.size() <= 15))
+        && (!('cores' in data) || (data.cores is list && data.cores.size() <= 15))
+        && (!('imagens' in data) || (data.imagens is list && data.imagens.size() <= 10))
+        && (!('descricao' in data) || (data.descricao is string && data.descricao.size() <= 2000));
+    }
+
+    // Regras para Coleção de Produtos
+    match /produtos/{produtoId} {
+      // Clientes anônimos podem ler somente se o produto estiver ativo (visível na vitrine)
+      // Administradores autenticados podem ler tudo (inclusive inativos e rascunhos)
+      allow read: if (resource == null || resource.data.ativo == true) || isAdmin();
+
+      // Somente administradores autenticados e verificados podem criar produtos válidos
+      allow create: if isAdmin() && isValidProductCreate();
+
+      // Somente administradores podem atualizar produtos com dados válidos
+      allow update: if isAdmin() && isValidProductUpdate();
+
+      // Somente administradores podem excluir produtos
+      allow delete: if isAdmin();
+    }
+
+    // Regras para Categorias
+    match /categorias/{categoriaId} {
+      // Leitura aberta para alimentar filtros da vitrine
+      allow read: if true;
+      // Escrita restrita a administradores
+      allow write: if isAdmin()
+        && request.resource.data.nome is string && request.resource.data.nome.size() <= 50;
+    }
+
+    // Regras para Configurações da Loja (WhatsApp, Banners, Informações)
+    match /configuracoes/{configId} {
+      // Leitura aberta para exibir telefone WhatsApp, banners e horário
+      allow read: if true;
+      // Somente admin pode alterar configurações comerciais
+      allow write: if isAdmin();
+    }
+  }
+}

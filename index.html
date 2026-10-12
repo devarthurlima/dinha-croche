@@ -3,193 +3,353 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dinha Crochê</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="./imagens/favicon.ico" type="image/x-icon">
+    
+    <!-- SEO Principal -->
+    <title>Dinha Moda & Crochê | Vitrine Virtual & Encomendas no WhatsApp</title>
+    <meta name="description" content="Vitrine virtual de roupas femininas e crochê artesanal exclusivo. Encontre vestidos, croppeds, conjuntos e peças sob medida com pedidos e atendimento direto pelo WhatsApp." />
+    <meta name="keywords" content="crochê, moda feminina, roupas artesanais, vestidos de crochê, cropped crochê, conjuntos, artesanato, vitrine virtual, loja de roupas whatsapp" />
+    <meta name="author" content="Dinha Moda & Crochê" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://devarthurlima.github.io/dinhaCroche/" />
+
+    <!-- Open Graph (WhatsApp, Instagram, Facebook) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Dinha Moda & Crochê | Vitrine Virtual de Roupas" />
+    <meta property="og:description" content="Peças exclusivas feitas à mão. Escolha sua peça, selecione o tamanho e cor e finalize o pedido no WhatsApp!" />
+    <meta property="og:image" content="./imagens/croche2.webp" />
+    <meta property="og:locale" content="pt_BR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Dinha Moda & Crochê | Vitrine Virtual" />
+    <meta name="twitter:description" content="Roupas e peças exclusivas em crochê artesanal com fechamento via WhatsApp." />
+    <meta name="twitter:image" content="./imagens/croche2.webp" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./imagens/favicon.ico" type="image/x-icon" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+
+    <!-- Estilos Globais -->
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     
-    <header class="topo-site">
-      <h1>Dinha Crochê</h1>
-      <nav>
-        <ul>
-          <li><a href="#">Coleções</a></li>
-          <li><a href="#">Sobre</a></li>
-          <li><a href="#">Contato</a></li>
-        </ul>
-      </nav>
+    <!-- Barra Superior de Avisos -->
+    <aside class="top-announcement-bar" aria-label="Avisos da Loja">
+      <div class="announcement-content">
+        <span>🌸 <strong>Nova Coleção:</strong> Peças artesanais com envio para todo o Brasil • Encomendas abertas!</span>
+      </div>
+      <button class="btn-topbar-admin btn-open-admin" title="Painel de Gestão da Lojista">
+        🔒 Área da Lojista
+      </button>
+    </aside>
+
+    <!-- Cabeçalho Principal -->
+    <header class="main-header">
+      <div class="header-container">
+        <div class="brand-wrapper">
+          <a href="#" class="brand-logo" aria-label="Página inicial Dinha Moda & Crochê">
+            <span class="brand-name">Dinha Crochê</span>
+            <span class="brand-tagline">Moda Artesanal & Peças Exclusivas</span>
+          </a>
+        </div>
+
+        <!-- Barra de Busca Rápida -->
+        <div class="search-bar-wrapper">
+          <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input 
+            type="search" 
+            id="search-input" 
+            placeholder="Buscar vestido, cropped, conjunto..." 
+            aria-label="Buscar produtos na vitrine"
+          />
+        </div>
+
+        <!-- Ações do Cabeçalho -->
+        <div class="header-actions">
+          <a href="#" id="header-whatsapp-btn" class="btn btn-whatsapp-compact" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.086s1.011.477 1.184.564.289.13.332.203c.043.072.043.419-.101.824z"/>
+            </svg>
+            <span>Fale Conosco</span>
+          </a>
+          <button class="btn btn-icon-round btn-open-admin" title="Entrar no Painel Admin" aria-label="Painel da Lojista">
+            ⚙️
+          </button>
+        </div>
+      </div>
     </header>
 
-    <main>
-      <section class="galeria-croche" aria-label="Galeria de Trabalhos">
-        <img src="./imagens/croche2.webp" alt="Blusa de crochê colorida" />
-        <img src="./imagens/croche1.webp" alt="Ovelha, porco e cavlo em miniatura de crochê" />
-        <img src="./imagens/croche3.webp" alt="Short feminino de crochê" />
+    <main id="main-content">
+      <!-- Hero Promocional da Vitrine -->
+      <section class="hero-section" aria-label="Apresentação da Loja">
+        <div class="hero-container">
+          <div class="hero-content">
+            <span class="hero-badge">🧶 Peças Exclusivas Feitas à Mão</span>
+            <h1 class="hero-title">
+              Sinta a delicadeza do <span class="highlight-text">crochê e da moda artesanal</span> em cada detalhe.
+            </h1>
+            <p class="hero-subtitle">
+              Navegue pelas peças disponíveis, selecione seu tamanho e cor, e finalize seu pedido diretamente no nosso WhatsApp com atendimento humanizado.
+            </p>
+            <div class="hero-ctas">
+              <a href="#vitrine" class="btn btn-primary btn-large">
+                Explorar Vitrine
+              </a>
+              <a href="#sobre" class="btn btn-secondary btn-large">
+                Conheça Nossa História
+              </a>
+            </div>
+          </div>
+          <div class="hero-gallery-preview">
+            <div class="hero-image-card card-1">
+              <img src="./imagens/croche2.webp" alt="Cropped artesanal em crochê" width="300" height="300" fetchpriority="high" />
+            </div>
+            <div class="hero-image-card card-2">
+              <img src="./imagens/croche3.webp" alt="Short de crochê para verão" width="300" height="300" />
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section>
-        <h2 class="frase-fotos">
-          Artesanato com carinho. <br> Peças únicas feitas à mão.
-        </h2>
-        <p class="encomendar">
-          <a href="#" target="_blank">Encomende Agora</a>
-        </p>
+      <!-- Seção da Vitrine de Produtos -->
+      <section id="vitrine" class="vitrine-section" aria-label="Vitrine de Roupas e Produtos">
+        <div class="section-header">
+          <h2 class="section-title">Vitrine de Peças</h2>
+          <p class="section-subtitle">Escolha sua peça favorita e encomende direto pelo WhatsApp</p>
+        </div>
+
+        <!-- Barra de Filtros e Categorias -->
+        <div class="filters-container">
+          <nav class="categories-nav" id="categories-nav" aria-label="Filtrar por Categoria">
+            <button class="category-pill active" data-category="all">
+              Todas as Peças <span class="pill-count" id="count-all">0</span>
+            </button>
+            <button class="category-pill" data-category="Crochê">
+              Crochê <span class="pill-count">0</span>
+            </button>
+            <button class="category-pill" data-category="Vestidos">
+              Vestidos <span class="pill-count">0</span>
+            </button>
+            <button class="category-pill" data-category="Conjuntos">
+              Conjuntos <span class="pill-count">0</span>
+            </button>
+            <button class="category-pill" data-category="Acessórios">
+              Acessórios <span class="pill-count">0</span>
+            </button>
+            <button class="category-pill" data-category="Infantil">
+              Infantil <span class="pill-count">0</span>
+            </button>
+          </nav>
+
+          <div class="secondary-filters">
+            <!-- Filtro de Tamanho -->
+            <div class="filter-select-wrapper">
+              <label for="size-filter" class="filter-label">Tamanho:</label>
+              <select id="size-filter" class="filter-select">
+                <option value="all">Todos os tamanhos</option>
+                <option value="PP">PP</option>
+                <option value="P">P</option>
+                <option value="M">M</option>
+                <option value="G">G</option>
+                <option value="GG">GG</option>
+                <option value="Plus">Plus</option>
+                <option value="Único">Tamanho Único</option>
+              </select>
+            </div>
+
+            <!-- Ordenação -->
+            <div class="filter-select-wrapper">
+              <label for="sort-filter" class="filter-label">Ordenar:</label>
+              <select id="sort-filter" class="filter-select">
+                <option value="featured">Destaques</option>
+                <option value="price-asc">Menor Preço</option>
+                <option value="price-desc">Maior Preço</option>
+                <option value="newest">Mais Recentes</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Indicador de Resultados -->
+        <div class="results-info-bar">
+          <span id="products-count" class="products-count">Carregando catálogo...</span>
+        </div>
+
+        <!-- Grid de Cards de Produtos -->
+        <div id="products-grid" class="products-grid"></div>
       </section>
 
-      <div class="conteiner-inferior">
-        
-        <!-- Seção 1: Categorias -->
-        <section class="categorias">
-          <h3>Categorias</h3>
-          
-          <ul class="grid-categorias">
-            <li class="item-categoria">
-              <figure>
-                <img src="./imagens/novelo01.jpeg" alt="Decoração" class="decoracao" />
-                <figcaption class="nome_categoria">Decoração</figcaption>
-              </figure>
-            </li>
+      <!-- Benefícios e Segurança da Compra -->
+      <section class="benefits-section" aria-label="Diferenciais da Loja">
+        <div class="benefits-grid">
+          <div class="benefit-item">
+            <div class="benefit-icon">🧶</div>
+            <h3>100% Feito à Mão</h3>
+            <p>Pontos precisos, fios nobres e acabamento impecável em cada peça.</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">💬</div>
+            <h3>Atendimento Direto no WhatsApp</h3>
+            <p>Tire dúvidas, envie suas medidas e combine cores diretamente com a artesã.</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">📦</div>
+            <h3>Envio para todo o Brasil</h3>
+            <p>Embalagens com perfume e carinho enviadas via Correios ou transportadora.</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">✨</div>
+            <h3>Peças Sob Medida</h3>
+            <p>Customizações de comprimento, decote e cores conforme sua preferência.</p>
+          </div>
+        </div>
+      </section>
 
-            <li class="item-categoria">
-              <figure>
-                <img src="./imagens/novelo002.jpeg" alt="Acessórios" class="acessorios" />
-                <figcaption class="nome_categoria">Acessórios</figcaption>
-              </figure>
-            </li>
-
-            <li class="item-categoria">
-              <figure>
-                <img src="./imagens/novelo003.jpeg" alt="Vestuário" class="vestuario" />
-                <figcaption class="nome_categoria">Vestuário</figcaption>
-              </figure>
-            </li>
-
-            <li class="item-categoria">
-              <figure>
-                <img src="./imagens/novelo04.jpeg" alt="Infantil" class="infantil" />
-                <figcaption class="nome_categoria">Infantil</figcaption>
-              </figure>
-            </li>
-          </ul>
-        </section>
-
-        <!-- Seção 2: Depoimentos -->
-        <section class="depoimentos">
-          <h3>Depoimentos</h3>
-
-          <ul class="lista-depoimentos">
-            <li class="item-depoimento">
-              <img src="./imagens/insta.webp" alt="Foto da cliente Maria" class="foto-cliente" />
-              <div class="conteudo-depoimento">
-                <blockquote>"Peça maravilhosa, impecável em cada detalhe!"</blockquote>
-                <cite class="nome-cliente">- Maria Silva</cite>
+      <!-- Sobre a Loja -->
+      <section id="sobre" class="about-section" aria-label="Sobre a Dinha Crochê">
+        <div class="about-card">
+          <div class="about-content">
+            <span class="about-badge">Nossa Paixão</span>
+            <h2>Arte, Moda & Afeto Tecidos à Mão</h2>
+            <p>
+              A <strong>Dinha Crochê</strong> nasceu do amor pelas tramas manuais e da vontade de vestir mulheres com peças que unem estilo atemporal, frescor e originalidade.
+            </p>
+            <p>
+              Cada ponto carrega horas de dedicação e história. Quando você veste uma peça artesanal, você valoriza o tempo, a sustentabilidade e a beleza única da manufatura brasileira.
+            </p>
+            <div class="about-highlights">
+              <div class="highlight-box">
+                <strong>+500</strong>
+                <span>Peças Entregues</span>
               </div>
-            </li>
-
-            <li class="item-depoimento">
-              <img src="./imagens/insta2.webp" alt="Foto da cliente Ana" class="foto-cliente" />
-              <div class="conteudo-depoimento">
-                <blockquote>"Entrega rápida e o crochê é extremamente bem feito."</blockquote>
-                <cite class="nome-cliente">- Ana Paula</cite>
+              <div class="highlight-box">
+                <strong>100%</strong>
+                <span>Avaliações Positivas</span>
               </div>
-            </li>
-          </ul>
-        </section>
+              <div class="highlight-box">
+                <strong>5 Anos</strong>
+                <span>De Tradição Artesanal</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-image">
+            <img src="./imagens/dinha_croche.jpg" alt="Ateliê Dinha Crochê" loading="lazy" width="450" height="450" />
+          </div>
+        </div>
+      </section>
 
-      </div>
-
-      <!-- Seção 3: Perguntas Frequentes -->
-      <section class="faq">
-        <h3>Perguntas Frequentes</h3>
+      <!-- Perguntas Frequentes (FAQ) -->
+      <section class="faq-section" aria-label="Dúvidas Frequentes">
+        <div class="section-header">
+          <h2 class="section-title">Perguntas Frequentes</h2>
+          <p class="section-subtitle">Tudo o que você precisa saber antes de fazer seu pedido</p>
+        </div>
 
         <ul class="lista-faq">
           <li class="item-faq">
             <button class="pergunta" aria-expanded="false">
-              Como funciona a encomenda?
+              Como funciona o pedido e pagamento pelo WhatsApp?
               <span class="icone-faq" aria-hidden="true">+</span>
             </button>
-            <p class="resposta">
-              Você escolhe a peça, conversa comigo pelo WhatsApp ou Instagram para
-              definir cores e detalhes, e eu confirmo o prazo e o valor antes de começar.
-            </p>
+            <div class="resposta-container">
+              <p class="resposta">
+                Ao clicar em <strong>"Comprar pelo WhatsApp"</strong>, uma mensagem pronta com o nome, tamanho e cor da peça é gerada para o nosso atendimento. Nós confirmamos a disponibilidade, calculamos o frete e fornecemos as opções de pagamento (Pix com desconto ou cartão de crédito em até 3x).
+              </p>
+            </div>
           </li>
 
           <li class="item-faq">
             <button class="pergunta" aria-expanded="false">
-              Vocês entregam para todo o Brasil?
+              Qual o prazo de envio para peças de pronta entrega e sob encomenda?
               <span class="icone-faq" aria-hidden="true">+</span>
             </button>
-            <p class="resposta">
-              Sim! Envio pelos Correios para todo o território nacional. O prazo
-              e o valor do frete variam de acordo com o seu CEP.
-            </p>
+            <div class="resposta-container">
+              <p class="resposta">
+                Peças em <strong>pronta entrega</strong> são postadas nos Correios em até 24 horas úteis após a confirmação. Peças <strong>sob encomenda</strong> possuem prazo de produção entre 5 a 15 dias úteis, conforme a complexidade do modelo.
+              </p>
+            </div>
           </li>
 
           <li class="item-faq">
             <button class="pergunta" aria-expanded="false">
-              Vocês aceitam pedidos personalizados?
+              Como sei qual tamanho escolher?
               <span class="icone-faq" aria-hidden="true">+</span>
             </button>
-            <p class="resposta">
-              Sim, adoro criar peças sob medida. Me conte a ideia, o tamanho e as
-              cores que você imagina e eu te digo se é possível e qual o prazo.
-            </p>
+            <div class="resposta-container">
+              <p class="resposta">
+                Na tela de detalhes de cada peça disponibilizamos a modelagem e sugestões de medidas (busto, cintura e quadril). Se tiver qualquer dúvida, pode nos mandar suas medidas pelo WhatsApp que te orientamos na escolha exata!
+              </p>
+            </div>
           </li>
 
           <li class="item-faq">
             <button class="pergunta" aria-expanded="false">
-              Qual o prazo médio de produção?
+              Como cuidar e lavar peças de crochê e roupas delicadas?
               <span class="icone-faq" aria-hidden="true">+</span>
             </button>
-            <p class="resposta">
-              Cada peça é feita à mão, então o prazo varia entre 7 e 20 dias
-              úteis, dependendo da complexidade e da fila de encomendas.
-            </p>
+            <div class="resposta-container">
+              <p class="resposta">
+                Recomendamos sempre lavar à mão com sabão neutro, sem torcer, e secar na horizontal à sombra para preservar a elasticidade dos pontos e as cores vivas das fibras.
+              </p>
+            </div>
           </li>
         </ul>
       </section>
-
-      <!-- Seção 4: Chamada final -->
-      <section class="cta-final">
-        <h2>Pronta para ter sua peça única?</h2>
-        <p class="encomendar">
-          <a href="#" target="_blank">Encomende Agora</a>
-        </p>
-      </section>
     </main>
 
-    <footer>
-      <nav class="redes-sociais" aria-label="Redes Sociais">
-        <a href="#" target="_blank" aria-label="Instagram">
-          <img src="./imagens/insta3.webp" alt="Instagram" class="img_rodape" />
-        </a>
-        <a href="#" target="_blank" aria-label="Facebook">
-          <img src="./imagens/insta3.webp" alt="Facebook" class="img_rodape" />
-        </a>
-        <a href="#" target="_blank" aria-label="WhatsApp">
-          <img src="./imagens/insta3.webp" alt="WhatsApp" class="img_rodape" />
-        </a>
-      </nav>
-      <p>&copy; 2026 Dinha Crochê. Todos os direitos reservados - Arthur Mendes Lima.</p>
+    <!-- Botão Flutuante do WhatsApp -->
+    <a 
+      href="#" 
+      id="whatsapp-floating-btn" 
+      class="whatsapp-floating-btn" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      aria-label="Iniciar conversa no WhatsApp com a Dinha Crochê"
+    >
+      <div class="floating-tooltip">Falar com a Artesã</div>
+      <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
+        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.086s1.011.477 1.184.564.289.13.332.203c.043.072.043.419-.101.824z"/>
+      </svg>
+    </a>
+
+    <!-- Rodapé -->
+    <footer class="main-footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <span class="footer-title">Dinha Moda & Crochê</span>
+          <p>Peças únicas tecidas à mão com dedicação, afeto e sofisticação.</p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#vitrine">Vitrine Virtual</a></li>
+            <li><a href="#sobre">Nossa História</a></li>
+            <li><a href="#" class="btn-open-admin">Painel Administrativo</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Atendimento</h4>
+          <p>Segunda a Sábado, das 9h às 19h</p>
+          <p>Pedidos fechados com total segurança no WhatsApp</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Dinha Crochê & Moda. Todos os direitos reservados.</p>
+      </div>
     </footer>
 
-    <script>
-      document.querySelectorAll(".pergunta").forEach((botao) => {
-        botao.addEventListener("click", () => {
-          const item = botao.parentElement;
-          const aberto = item.classList.contains("aberto");
-
-          document.querySelectorAll(".item-faq").forEach((outro) => {
-            outro.classList.remove("aberto");
-            outro.querySelector(".pergunta").setAttribute("aria-expanded", "false");
-          });
-
-          if (!aberto) {
-            item.classList.add("aberto");
-            botao.setAttribute("aria-expanded", "true");
-          }
-        });
-      });
-    </script>
-</body>
+    <!-- Script Principal (Módulo ES6) -->
+    <script type="module" src="./src/app.js"></script>
+  </body>
 </html>
